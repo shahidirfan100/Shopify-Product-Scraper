@@ -1,0 +1,103 @@
+{
+  "title": "Shopify Product Scraper",
+  "description": "Extract product data from any Shopify store using advanced JSON API and HTML parsing methods. Support for collections, search queries, variants, and pagination.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "shopUrl": {
+      "title": "Shopify Store URL",
+      "type": "string",
+      "description": "The base URL of the Shopify store (e.g., https://www.allbirds.com or allbirds.com)",
+      "editor": "textfield",
+      "prefill": "https://www.allbirds.com"
+    },
+    "startUrls": {
+      "title": "Start URLs (Optional)",
+      "type": "array",
+      "description": "Specific URLs to scrape (e.g., collection pages, product pages). If provided, shopUrl settings will be ignored.",
+      "editor": "requestListSources",
+      "placeholderKey": "url",
+      "placeholderValue": "https://example.myshopify.com/collections/all"
+    },
+    "collection": {
+      "title": "Collection Handle",
+      "type": "string",
+      "description": "Specific collection to scrape (e.g., 'all', 'mens-shoes', 'new-arrivals'). Use 'all' for all products.",
+      "editor": "textfield",
+      "default": "all"
+    },
+    "searchQuery": {
+      "title": "Search Query",
+      "type": "string",
+      "description": "Search for products matching this query instead of scraping a collection.",
+      "editor": "textfield"
+    },
+    "maxProducts": {
+      "title": "Maximum Products",
+      "type": "integer",
+      "description": "Maximum number of products to scrape. Leave empty or set to 0 for unlimited.",
+      "editor": "number",
+      "minimum": 1,
+      "default": 100
+    },
+    "maxPages": {
+      "title": "Maximum Pages",
+      "type": "integer",
+      "description": "Maximum number of pages to crawl for pagination. Safety limit to prevent infinite loops.",
+      "editor": "number",
+      "minimum": 1,
+      "default": 999
+    },
+    "includeVariants": {
+      "title": "Include Product Variants",
+      "type": "boolean",
+      "description": "Include all product variants (sizes, colors, etc.) in the output.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "includeOutOfStock": {
+      "title": "Include Out of Stock Products",
+      "type": "boolean",
+      "description": "Include products that are currently out of stock.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "debugLog": {
+      "title": "Debug Logging",
+      "type": "boolean",
+      "description": "Enable detailed debug logs for troubleshooting.",
+      "editor": "checkbox",
+      "default": false
+    },
+    "maxConcurrency": {
+      "title": "Max Concurrency",
+      "type": "integer",
+      "description": "Maximum number of concurrent requests. Higher values = faster scraping but more resources.",
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+    },
+    "maxRequestRetries": {
+      "title": "Max Request Retries",
+      "type": "integer",
+      "description": "Maximum number of retries for failed requests.",
+      "editor": "number",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 3
+    },
+    "proxyConfiguration": {
+      "title": "Proxy Configuration",
+      "type": "object",
+      "description": "Proxy settings for bypassing rate limits. Residential proxies recommended for best results.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": ["RESIDENTIAL"]
+      }
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

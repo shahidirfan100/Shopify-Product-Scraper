@@ -1,0 +1,130 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "title",
+          "vendor",
+          "product_type",
+          "price",
+          "currency",
+          "available",
+          "url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "title": {
+            "label": "Product Title",
+            "format": "text"
+          },
+          "vendor": {
+            "label": "Brand/Vendor",
+            "format": "text"
+          },
+          "product_type": {
+            "label": "Category",
+            "format": "text"
+          },
+          "price": {
+            "label": "Price",
+            "format": "number"
+          },
+          "currency": {
+            "label": "Currency",
+            "format": "text"
+          },
+          "available": {
+            "label": "In Stock",
+            "format": "boolean"
+          },
+          "url": {
+            "label": "Product URL",
+            "format": "link"
+          }
+        }
+      }
+    },
+    "detailed": {
+      "title": "Detailed View",
+      "transformation": {
+        "fields": [
+          "title",
+          "handle",
+          "vendor",
+          "product_type",
+          "price",
+          "compare_at_price",
+          "currency",
+          "available",
+          "inventory_quantity",
+          "sku",
+          "tags",
+          "url",
+          "images"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "title": {
+            "label": "Product",
+            "format": "text"
+          },
+          "handle": {
+            "label": "Handle",
+            "format": "text"
+          },
+          "vendor": {
+            "label": "Vendor",
+            "format": "text"
+          },
+          "product_type": {
+            "label": "Type",
+            "format": "text"
+          },
+          "price": {
+            "label": "Price",
+            "format": "number"
+          },
+          "compare_at_price": {
+            "label": "Compare Price",
+            "format": "number"
+          },
+          "currency": {
+            "label": "Currency",
+            "format": "text"
+          },
+          "available": {
+            "label": "Available",
+            "format": "boolean"
+          },
+          "inventory_quantity": {
+            "label": "Stock",
+            "format": "number"
+          },
+          "sku": {
+            "label": "SKU",
+            "format": "text"
+          },
+          "tags": {
+            "label": "Tags",
+            "format": "array"
+          },
+          "url": {
+            "label": "URL",
+            "format": "link"
+          },
+          "images": {
+            "label": "Images",
+            "format": "array"
+          }
+        }
+      }
+    }
+  }
+}
