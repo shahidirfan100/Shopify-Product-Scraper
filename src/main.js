@@ -15,15 +15,17 @@ async function main() {
             startUrls,
             collection,
             searchQuery = '',
-            maxProducts = 100,
+            maxProducts = 50,
             maxPages = 999,
             includeVariants = true,
             includeOutOfStock = true,
             proxyConfiguration,
-            debugLog = false,
-            maxConcurrency = 5,
-            maxRequestRetries = 3,
         } = input;
+
+        // Internal configuration - not user configurable
+        const debugLog = false;
+        const maxConcurrency = 5;
+        const maxRequestRetries = 3;
 
         if (debugLog) {
             log.setLevel(log.LEVELS.DEBUG);

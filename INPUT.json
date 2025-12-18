@@ -1,13 +1,10 @@
 {
   "shopUrl": "https://www.allbirds.com",
   "collection": "all",
-  "maxProducts": 100,
+  "maxProducts": 50,
   "maxPages": 20,
   "includeVariants": true,
   "includeOutOfStock": true,
-  "debugLog": false,
-  "maxConcurrency": 5,
-  "maxRequestRetries": 3,
   "proxyConfiguration": {
     "useApifyProxy": true,
     "apifyProxyGroups": ["RESIDENTIAL"]
